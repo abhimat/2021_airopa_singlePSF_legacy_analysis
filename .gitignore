@@ -15,3 +15,7 @@
 
 # Ignore align files
 */starlists_align/*
+
+# Ignore hdf5 data tables
+**/*.h5
+**/*.hdf5
