@@ -1,0 +1,17 @@
+## Date: 2021-10-22
+## File: ../source_list/absolute_refs.dat, Reference: ../lis/mag09jullgs_kp_rms.lis
+## Directory: /Users/abhimat/localcompute/photometry_aligns/2021_newdata/phot_21_10_2_Kp/scripts
+## Transform Class: PolyTransform
+## Order: 2
+## Restrict: False
+## Weights: both
+## N_coeff: 6
+## N_trans: 211
+## Delta Mag: 0.06020379146919432
+# Xcoeff         Ycoeff          
+    6.185980e+02      7.213521e+02
+    1.005150e+02      4.372755e-01
+   -4.709681e-01      1.004889e+02
+    1.350516e-03      2.588878e-03
+    5.010908e-03     -6.104518e-04
+   -1.286806e-03     -3.439162e-03
