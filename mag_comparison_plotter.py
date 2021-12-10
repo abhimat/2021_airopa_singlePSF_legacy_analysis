@@ -9,7 +9,7 @@ import os
 import numpy as np
 from scipy import stats
 
-from file_readers import stf_lis_reader,
+from file_readers import stf_lis_reader,\
     align_orig_pos_reader, align_pos_reader, align_mag_reader
 
 from astropy.table import Table
