@@ -117,7 +117,7 @@ for epochs_row in tqdm(epochs_table):
     java_align_command = 'java align ' + align_flags
     os.system(java_align_command)
     
-    # java_align_abs_command = 'java align ' + align_abs_flags
-    # os.system(java_align_abs_command)
+    java_align_abs_command = 'java align_absolute ' + align_abs_flags
+    os.system(java_align_abs_command)
     
     os.chdir(orig_wd)
