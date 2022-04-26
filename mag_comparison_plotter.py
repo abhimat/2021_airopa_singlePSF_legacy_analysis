@@ -102,7 +102,7 @@ def analyze_mag_comparison(epoch_name, dr_path = '/g/ghez/data/dr/dr1',
         filtered_diff_mags = diff_mag[mag_bin_filter]
     
         diff_mag_medians[cur_bin_index] = np.median(filtered_diff_mags)
-        diff_mag_MADs[cur_bin_index] = stats.median_absolute_deviation(filtered_diff_mags)
+        diff_mag_MADs[cur_bin_index] = stats.median_abs_deviation(filtered_diff_mags)
     
         diff_mag_MAD_hi[cur_bin_index] = (diff_mag_medians[cur_bin_index] +
                                           diff_mag_MADs[cur_bin_index])

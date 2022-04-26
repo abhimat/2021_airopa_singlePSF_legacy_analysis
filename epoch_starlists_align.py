@@ -54,6 +54,13 @@ epochs_table = Table.read('epochs_table.h5', format='hdf5', path='data')
 
 epochs_table = epochs_table[np.where(epochs_table['nights_combo'] == 'single_night')]
 
+specific_epoch = '20140805nirc2'
+specific_epoch = None
+
+if specific_epoch is not None:
+    epochs_table = epochs_table[np.where(epochs_table['epoch'] == specific_epoch)]
+
+
 # Go through and process each epoch
 orig_wd = os.getcwd()
 

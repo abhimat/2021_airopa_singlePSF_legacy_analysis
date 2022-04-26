@@ -1,0 +1,23 @@
+dataSource = individual("../data/");
+fitter = multinest;
+useKeplerRedshift;
+TestingEquivalence = 1. ;
+distance = [5900 , 10500];
+mass = [2.3e6 , 7.e6];
+pix2arc = 1.0;
+focusX= [-0.02 , 0.03];
+focusY= [-0.04 , 0.03];
+focusX_velocity = [-0.002,  0.002];
+focusY_velocity = [-0.001, 0.0025];
+focus_radial = [-120 , 120];
+object "S0-2" {
+	 radialVelocityData= "../../source_list/align_orbit_test/S0-2.rv";
+         smallOmega = [60., 71.];
+         bigOmega = [221., 233.];
+         inclination = [128. , 139.];
+         eccentricity = [0.865 , 0.915];
+         period = [15.4 , 16.9];
+         periastronPassage = [2018 , 2019];
+}
+
+

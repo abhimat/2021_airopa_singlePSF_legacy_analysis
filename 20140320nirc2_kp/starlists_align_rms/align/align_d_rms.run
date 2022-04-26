@@ -1,0 +1,2 @@
+Java align run with the following flags on: 2022.04.24 at 11:04:30 PDT
+-r align_d_rms -m 16 -a 0 -p -v -N ../source_list/label_abs.dat -o ../source_list/orbits.dat -O 2 align_d_rms.list 

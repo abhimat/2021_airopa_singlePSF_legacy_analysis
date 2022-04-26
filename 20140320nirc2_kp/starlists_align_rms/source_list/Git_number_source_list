@@ -1,0 +1,9 @@
+source_list    ---->     absolute_refs.dat 
+source_list    ---->     label.dat 
+source_list    ---->     label_info.dat 
+source_list    ---->     orbits.dat 
+source_list    ---->     photo_calib.dat 
+source_list    ---->     confused_epochs_astrometry.txt 
+source_list    ---->     S0-38_ManualPoints.txt 
+source_list    ---->     manual_star_match.sqlite 
+source_list git version: e4cbdb7c16b2947c78f77df56d4d4cc7f689d0fa

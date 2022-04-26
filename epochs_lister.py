@@ -10,6 +10,9 @@ import astropy.table as table
 
 import numpy as np
 
+exclude_epochs = ['20050730nirc2', '20060502nirc2',
+                  '20140805nirc2']
+
 def construct_epoch_table(dr_path = '/g/ghez/data/dr/dr1',
         legacy_version_str = 'v2_3', single_version_str = 'v3_1', filt = 'kp'):
     legacy_search_str = '{0}/starlists/combo/*/starfinder_{1}/mag*{2}*stf.lis'.format(
@@ -50,6 +53,14 @@ def construct_epoch_table(dr_path = '/g/ghez/data/dr/dr1',
     common_epochs_filt = np.isin(legacy_epoch_names, single_epoch_names)
 
     common_epochs = (np.array(legacy_epoch_names))[common_epochs_filt]
+    
+    common_epochs_cleaned = []
+    for epoch in common_epochs:
+        if epoch in exclude_epochs:
+            continue
+        common_epochs_cleaned.append(epoch)
+    
+    common_epochs = common_epochs_cleaned
 
     # Go through epochs to figure out which are multi night combos
     combo_epochs_column = []

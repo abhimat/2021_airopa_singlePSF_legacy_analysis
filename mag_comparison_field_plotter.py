@@ -37,7 +37,7 @@ def analyze_mag_field_comparison(epoch_name, dr_path = '/g/ghez/data/dr/dr1',
     
     epoch_analysis_location = '{0}/{1}_{2}/'.format(cur_wd, epoch_name, filt_name)
     starlist_align_location = epoch_analysis_location + 'starlists_align/align/'
-    align_root = starlist_align_location + 'align_d'
+    align_root = starlist_align_location + 'align_d_abs'
     
     plot_out_dir = epoch_analysis_location + 'mag_comparison_plots/'
     os.makedirs(plot_out_dir, exist_ok=True)
@@ -98,10 +98,10 @@ def analyze_mag_field_comparison(epoch_name, dr_path = '/g/ghez/data/dr/dr1',
     neighbor_kdtree = KDTree(list(zip(common_x, common_y)))
 
     ## Construct grid points for nearest neighbors map
-    near_neighbors_map_x_bounds = [0, 1200]
-    near_neighbors_map_y_bounds = [0, 1200]
+    near_neighbors_map_x_bounds = [-6, 6]
+    near_neighbors_map_y_bounds = [-7, 5]
 
-    near_neighbors_map_grid_spacing = 10
+    near_neighbors_map_grid_spacing = 0.05
 
     near_neighbors_map_x_coords = np.arange(near_neighbors_map_x_bounds[0], near_neighbors_map_x_bounds[1] + near_neighbors_map_grid_spacing, near_neighbors_map_grid_spacing)
     near_neighbors_map_y_coords = np.arange(near_neighbors_map_y_bounds[0], near_neighbors_map_y_bounds[1] + near_neighbors_map_grid_spacing, near_neighbors_map_grid_spacing)
@@ -139,8 +139,8 @@ def analyze_mag_field_comparison(epoch_name, dr_path = '/g/ghez/data/dr/dr1',
 
     ## Draw nearest neighbors maps
     ### Flip x coordinates to match E direction
-    near_neighbors_map_x_bounds = [0, 1200]
-    near_neighbors_map_y_bounds = [0, 1200]
+    near_neighbors_map_x_bounds = [-6, 6]
+    near_neighbors_map_y_bounds = [-7, 5]
 
     map_extents = [near_neighbors_map_x_bounds[0] + near_neighbors_map_grid_spacing,
                    near_neighbors_map_x_bounds[1] - near_neighbors_map_grid_spacing,
@@ -148,8 +148,10 @@ def analyze_mag_field_comparison(epoch_name, dr_path = '/g/ghez/data/dr/dr1',
                    near_neighbors_map_y_bounds[1] + near_neighbors_map_grid_spacing]
 
 
-    fig, ax = plt.subplots(figsize=(4.5,5))
-
+    fig, ax = plt.subplots(figsize=(4.5,5.25))
+    
+    ax.set_title(epoch_name.replace('_', '\_') + ' ' + filt_name)
+    
     color_normalizer = mpl.colors.Normalize(vmin=-0.1, vmax=0.1)
     color_cmap = plt.get_cmap('plasma')
 
@@ -158,24 +160,24 @@ def analyze_mag_field_comparison(epoch_name, dr_path = '/g/ghez/data/dr/dr1',
                            extent=map_extents)
 
     ### Flip x coordinates to match E direction
-    near_neighbors_map_x_bounds = [0, 1200]
+    near_neighbors_map_x_bounds = [6, -6]
 
     ax.axis('equal')
 
-    ax.set_xlabel(r"Single PSF Starfinder $x$ (pixels)")
-    ax.set_ylabel(r"Single PSF Starfinder $x$ (pixels)")
+    ax.set_xlabel(r"arcsec E of Sgr A*")
+    ax.set_ylabel(r"arcsec N of Sgr A*")
 
     ax.set_xlim(near_neighbors_map_x_bounds)
     ax.set_ylim(near_neighbors_map_y_bounds)
 
 
-    x_majorLocator = MultipleLocator(200)
-    x_minorLocator = MultipleLocator(50)
+    x_majorLocator = MultipleLocator(2)
+    x_minorLocator = MultipleLocator(0.5)
     ax.xaxis.set_major_locator(x_majorLocator)
     ax.xaxis.set_minor_locator(x_minorLocator)
 
-    y_majorLocator = MultipleLocator(200)
-    y_minorLocator = MultipleLocator(50)
+    y_majorLocator = MultipleLocator(2)
+    y_minorLocator = MultipleLocator(0.5)
     ax.yaxis.set_major_locator(y_majorLocator)
     ax.yaxis.set_minor_locator(y_minorLocator)
 

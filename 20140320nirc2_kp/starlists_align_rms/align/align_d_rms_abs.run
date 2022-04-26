@@ -1,0 +1,2 @@
+Java AlignAbsolute run with the following flags on: 2022.04.24 at 11:04:33 PDT
+-a 3 -abs ../source_list/absolute_refs.dat align_d_rms align_d_rms_abs 
