@@ -3,11 +3,14 @@
 **/*.png
 **/*.jpg
 **/*.pdf
+**/*.gif
+
+# Ignore unnecessary python files
+**/*.pyc
 
 # Ignore OS generated files
 .DS_Store
 ._*
-
 
 # Ignore all files ending with ~
 *~
@@ -15,6 +18,7 @@
 
 # Ignore align files
 */starlists_align/*
+*/starlists_align_rms/*
 
 # Ignore hdf5 data tables
 **/*.h5
