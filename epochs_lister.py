@@ -10,7 +10,7 @@ import astropy.table as table
 
 import numpy as np
 
-exclude_epochs = ['20050730nirc2', '20060502nirc2',
+exclude_epochs = ['20050730nirc2', '20050731nirc2', '20060502nirc2',
                   '20140805nirc2']
 
 def construct_epoch_table(dr_path = '/g/ghez/data/dr/dr1',

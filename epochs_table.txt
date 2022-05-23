@@ -17,8 +17,8 @@
      20090502nirc2   kp single_night
      20090504nirc2   kp single_night
 20090722_0724nirc2   kp  multi_night
-     20090722nirc2    h single_night
      20090722nirc2   kp single_night
+     20090722nirc2    h single_night
      20090724nirc2   kp single_night
      20090909nirc2   kp single_night
 20100504_0505nirc2   kp  multi_night
@@ -81,26 +81,26 @@
 20170823_0826nirc2    h  multi_night
      20170823nirc2    h single_night
      20170823nirc2   kp single_night
-     20170824nirc2   kp single_night
      20170824nirc2    h single_night
-     20170826nirc2   kp single_night
+     20170824nirc2   kp single_night
      20170826nirc2    h single_night
-20180317_0330nirc2    h  multi_night
+     20170826nirc2   kp single_night
 20180317_0330nirc2   kp  multi_night
+20180317_0330nirc2    h  multi_night
 20180317_0524nirc2   kp  multi_night
 20180317_0524nirc2    h  multi_night
-     20180317nirc2   kp single_night
      20180317nirc2    h single_night
+     20180317nirc2   kp single_night
      20180322nirc2   kp single_night
      20180322nirc2    h single_night
      20180330nirc2    h single_night
      20180330nirc2   kp single_night
 20180519_0524nirc2   kp  multi_night
 20180519_0524nirc2    h  multi_night
-     20180519nirc2   kp single_night
      20180519nirc2    h single_night
-     20180524nirc2    h single_night
+     20180519nirc2   kp single_night
      20180524nirc2   kp single_night
+     20180524nirc2    h single_night
      20180903nirc2    h single_night
 20190419_0420nirc2   kp  multi_night
      20190419nirc2   kp single_night
@@ -122,8 +122,8 @@
      20210514nirc2   kp single_night
 20210713_0714nirc2   kp  multi_night
      20210713nirc2   kp single_night
-     20210714nirc2   kp single_night
      20210714nirc2    h single_night
+     20210714nirc2   kp single_night
 20210812_0813nirc2   kp  multi_night
 20210812_0814nirc2   kp  multi_night
      20210812nirc2   kp single_night
@@ -131,3 +131,8 @@
      20210814nirc2   kp single_night
      20210815nirc2   kp single_night
      20210821nirc2   kp single_night
+20220514_0515nirc2   kp  multi_night
+     20220514nirc2   kp single_night
+     20220515nirc2   kp single_night
+     20220521nirc2    h single_night
+     20220521nirc2   kp single_night
