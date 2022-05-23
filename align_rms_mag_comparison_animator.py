@@ -33,7 +33,7 @@ for filter in filters:
     # Directories
     cur_wd = os.getcwd()
 
-    plot_out_dir = cur_wd + '/align_rms_pos_comparison_plots/'
+    plot_out_dir = cur_wd + '/align_rms_mag_comparison_plots/'
     os.makedirs(plot_out_dir, exist_ok=True)
     
     # Read in epochs table
@@ -43,12 +43,26 @@ for filter in filters:
     epochs_table = epochs_table[np.where(epochs_table['filt'] == filter)]
     
     # Set up GIF writers
+    stf_lum_writer = imageio.get_writer(
+                            '{0}/stf_lum_funcs_{1}.gif'.format(plot_out_dir, filter),
+                            mode='I', fps=1, subrectangles=True)
+    
+    stf_lum_one_mode_writer = imageio.get_writer(
+                            '{0}/stf_lum_funcs_one_mode_{1}.gif'.format(plot_out_dir, filter),
+                            mode='I', fps=1, subrectangles=True)
+    
     comp_gif_writer = imageio.get_writer(
-                            '{0}/stf_pos_comparison_{1}.gif'.format(plot_out_dir, filter),
+                            '{0}/stf_mag_comparison_{1}.gif'.format(plot_out_dir, filter),
                             mode='I', fps=1, subrectangles=True)
-    comp_err_gif_writer = imageio.get_writer(
-                            '{0}/stf_pos_err_comparison_{1}.gif'.format(plot_out_dir, filter),
+    
+    mag_delta_gif_writer = imageio.get_writer(
+                            '{0}/stf_mag_delta_comparison_{1}.gif'.format(plot_out_dir, filter),
                             mode='I', fps=1, subrectangles=True)
+    
+    mag_delta_nostars_gif_writer = imageio.get_writer(
+                            '{0}/stf_mag_delta_comparison_nostars_{1}.gif'.format(plot_out_dir, filter),
+                            mode='I', fps=1, subrectangles=True)
+    
     # comp_nearneigh_gif_writer = imageio.get_writer(
     #                         '{0}/stf_pos_comparison_nearneigh_{1}.gif'.format(plot_out_dir, filter),
     #                         mode='I', fps=1, subrectangles=True)
@@ -60,20 +74,36 @@ for filter in filters:
     
         cur_epoch_analysis_location = '{0}/{1}_{2}/'.format(cur_wd, cur_epoch,
                                                             cur_filt)
-        cur_plot_dir = cur_epoch_analysis_location + 'align_rms_pos_comparison_plots/'
+        cur_plot_dir = cur_epoch_analysis_location + 'align_rms_mag_comparison_plots/'
     
-        cur_plot_file = cur_plot_dir + 'stf_pos_comparison.png'
+        cur_plot_file = cur_plot_dir + 'stf_lum_funcs.png'
+        cur_image = imageio.imread(cur_plot_file)
+        stf_lum_writer.append_data(cur_image)
+        
+        cur_plot_file = cur_plot_dir + 'stf_lum_funcs_one_mode.png'
+        cur_image = imageio.imread(cur_plot_file)
+        stf_lum_one_mode_writer.append_data(cur_image)
+        
+        cur_plot_file = cur_plot_dir + 'stf_mag_comparison.png'
         cur_image = imageio.imread(cur_plot_file)
         comp_gif_writer.append_data(cur_image)
         
-        cur_plot_file = cur_plot_dir + 'stf_pos_err_comparison.png'
+        cur_plot_file = cur_plot_dir + 'stf_mag_delta_comparison.png'
         cur_image = imageio.imread(cur_plot_file)
-        comp_err_gif_writer.append_data(cur_image)
-        #
+        mag_delta_gif_writer.append_data(cur_image)
+        
+        cur_plot_file = cur_plot_dir + 'stf_mag_delta_comparison_nostars.png'
+        cur_image = imageio.imread(cur_plot_file)
+        mag_delta_nostars_gif_writer.append_data(cur_image)
+        
         # cur_plot_file = cur_plot_dir + 'stf_pos_comparison_nearneigh.png'
         # cur_image = imageio.imread(cur_plot_file)
         # comp_nearneigh_gif_writer.append_data(cur_image)
 
     # Close out GIF writers
+    stf_lum_writer.close()
+    stf_lum_one_mode_writer.close()
     comp_gif_writer.close()
-    comp_nearneigh_gif_writer.close()
+    mag_delta_gif_writer.close()
+    mag_delta_nostars_gif_writer.close()
+    

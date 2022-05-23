@@ -140,10 +140,10 @@ def analyze_pos_comparison(epoch_name, dr_path = '/g/ghez/data/dr/dr1',
              '.', color='k', alpha=0.6)
     
     ax1.set_xlabel(r"Legacy Starfinder: $x$")
-    ax1.set_ylabel(r"Single PSF Starfinder: $x$")
+    ax1.set_ylabel(r"Single-PSF Starfinder: $x$")
     
     ax2.set_xlabel(r"Legacy Starfinder: $y$")
-    ax2.set_ylabel(r"Single PSF Starfinder: $y$")
+    ax2.set_ylabel(r"Single-PSF Starfinder: $y$")
     
     ax1.set_aspect('equal', 'box')
     ax2.set_aspect('equal', 'box')
@@ -169,10 +169,10 @@ def analyze_pos_comparison(epoch_name, dr_path = '/g/ghez/data/dr/dr1',
              '.', color='k', alpha=0.6)
     
     ax1.set_xlabel(r"Legacy Starfinder: $x$")
-    ax1.set_ylabel(r"Single PSF $x$ $-$ Legacy $x$")
+    ax1.set_ylabel(r"Single-PSF $x$ $-$ Legacy $x$")
     
     ax2.set_xlabel(r"Legacy Starfinder: $y$")
-    ax2.set_ylabel(r"Single PSF $y$ $-$ Legacy $y$")
+    ax2.set_ylabel(r"Single-PSF $y$ $-$ Legacy $y$")
     
     ax1.set_ylim([np.median(diff_pos_x) - 5.*stats.median_abs_deviation(diff_pos_x),
                   np.median(diff_pos_x) + 5.*stats.median_abs_deviation(diff_pos_x)])
@@ -199,38 +199,42 @@ def analyze_pos_comparison(epoch_name, dr_path = '/g/ghez/data/dr/dr1',
     # Position error comparison
     fig, (ax1, ax2) = plt.subplots(figsize=(8,4), nrows=1, ncols=2)
     
-    ax1.set_title(epoch_name.replace('_', '\_') + ' ' + filt_name)
+    ax1.set_title(epoch_name.replace('_', '\_') + ' ' + filt_name + r' $x$')
+    ax2.set_title(epoch_name.replace('_', '\_') + ' ' + filt_name + r' $y$')
     
     ax1.plot(common_detections_pos_err_table[legacy_version_str + '_x_err'],
-             common_detections_pos_err_table[single_version_str + '_x_err'],
+             (common_detections_pos_err_table[single_version_str + '_x_err'] /
+              common_detections_pos_err_table[legacy_version_str + '_x_err']),
              '.', color='k', alpha=0.6)
     
     ax2.plot(common_detections_pos_err_table[legacy_version_str + '_y_err'],
-             common_detections_pos_err_table[single_version_str + '_y_err'],
+             (common_detections_pos_err_table[single_version_str + '_y_err'] /
+              common_detections_pos_err_table[legacy_version_str + '_y_err']),
              '.', color='k', alpha=0.6)
     
     # print(common_detections_pos_err_table[legacy_version_str + '_y'])
     # print(common_detections_pos_err_table[single_version_str + '_y'])
     
-    ax1.set_xlabel(r"Legacy Starfinder: $\sigma_x$ (arcsec)")
-    ax1.set_ylabel(r"Single PSF Starfinder: $\sigma_x$ (arcsec)")
+    ax1.set_xlabel(r"Legacy STF $\sigma_x$ (arcsec)")
+    ax1.set_ylabel(r"Single-PSF STF $\sigma_x$ $/$ Legacy STF $\sigma_x$")
     
-    ax2.set_xlabel(r"Legacy Starfinder: $\sigma_y$ (arcsec)")
-    ax2.set_ylabel(r"Single PSF Starfinder: $\sigma_y$ (arcsec)")
+    ax2.set_xlabel(r"Legacy STF $\sigma_y$ (arcsec)")
+    ax2.set_ylabel(r"Single-PSF STF $\sigma_y$ $/$ Legacy STF $\sigma_y$")
     
-    ax1.set_aspect('equal', 'box')
-    ax2.set_aspect('equal', 'box')
+    # ax1.set_aspect('equal', 'box')
+    # ax2.set_aspect('equal', 'box')
     
     plot_lims = [1e-5, 2e-2]
+    y_plot_lims = [1e-2, 1e2]
     
     ax1.set_xlim(plot_lims)
-    ax1.set_ylim(plot_lims)
+    ax1.set_ylim(y_plot_lims)
     
     ax2.set_xlim(plot_lims)
-    ax2.set_ylim(plot_lims)
+    ax2.set_ylim(y_plot_lims)
     
-    ax1.plot(plot_lims, plot_lims, 'r:')
-    ax2.plot(plot_lims, plot_lims, 'r:')
+    ax1.plot(plot_lims, [1, 1], 'k:')
+    ax2.plot(plot_lims, [1, 1], 'k:')
     
     ax1.set_xscale('log')
     ax1.set_yscale('log')
@@ -256,7 +260,7 @@ def analyze_pos_comparison(epoch_name, dr_path = '/g/ghez/data/dr/dr1',
                   scale=0.25, scale_units='xy')
     
     ax.quiverkey(q, X=0.05, Y=-0.15, U=0.1, labelpos='E',
-                 label=r'0.1 pixel, Single PSF $-$ Legacy Starfinder position',
+                 label=r'0.1 pixel, Single-PSF $-$ Legacy Starfinder position',
                  fontproperties={'size':'x-small'})
     
     if mag_bin_lo == -1:
@@ -370,7 +374,7 @@ def analyze_pos_comparison(epoch_name, dr_path = '/g/ghez/data/dr/dr1',
                   near_neighbors_map_plot_median_val_y,
                   scale=0.25, scale_units='xy')
 
-    quiver_label = r'0.1 pixel, Single PSF $-$ Legacy Starfinder position'
+    quiver_label = r'0.1 pixel, Single-PSF $-$ Legacy Starfinder position'
     quiver_label += ' (median of 20 nearest neighbors)'
 
     ax.quiverkey(q, X=0.05, Y=-0.15, U=0.1, labelpos='E',
@@ -417,10 +421,14 @@ def analyze_pos_comparison(epoch_name, dr_path = '/g/ghez/data/dr/dr1',
 # Read in epochs table
 epochs_table = Table.read('epochs_table.h5', format='hdf5', path='data')
 
+print(epochs_table)
+
 epochs_table = epochs_table[np.where(epochs_table['nights_combo'] == 'single_night')]
 
+print(epochs_table)
+
 # Run analysis code on all epochs
-for epochs_row in tqdm(epochs_table[30:]):
+for epochs_row in tqdm(epochs_table[2:]):
     cur_epoch = epochs_row['epoch']
     print(cur_epoch)
     cur_filt = epochs_row['filt']

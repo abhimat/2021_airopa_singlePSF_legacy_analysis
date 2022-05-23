@@ -9,16 +9,17 @@ def stf_lis_reader(file_loc):
     # Read in table
     stf_table = Table.read(file_loc, format='ascii')
     
-    # Rename columns
-    stf_table.rename_column('col1', 'name')
-    stf_table.rename_column('col2', 'mag')
-    stf_table.rename_column('col3', 'epoch')
-    stf_table.rename_column('col4', 'x')
-    stf_table.rename_column('col5', 'y')
-    stf_table.rename_column('col6', 'snr')
-    stf_table.rename_column('col7', 'corr')
-    stf_table.rename_column('col8', 'N_frames')
-    stf_table.rename_column('col9', 'flux')
+    if stf_table.colnames[0] == 'col1':
+        # Rename columns
+        stf_table.rename_column('col1', 'name')
+        stf_table.rename_column('col2', 'mag')
+        stf_table.rename_column('col3', 'epoch')
+        stf_table.rename_column('col4', 'x')
+        stf_table.rename_column('col5', 'y')
+        stf_table.rename_column('col6', 'snr')
+        stf_table.rename_column('col7', 'corr')
+        stf_table.rename_column('col8', 'N_frames')
+        stf_table.rename_column('col9', 'flux')
     
     return stf_table
 
@@ -29,8 +30,8 @@ def stf_rms_lis_reader(file_loc):
     if stf_table.colnames[0] == 'col1':
         # Rename columns
         stf_table.rename_column('col1', 'name')
-        stf_table.rename_column('col2', 'mag')
-        stf_table.rename_column('col3', 'epoch')
+        stf_table.rename_column('col2', 'm')
+        stf_table.rename_column('col3', 't')
         stf_table.rename_column('col4', 'x')
         stf_table.rename_column('col5', 'y')
         stf_table.rename_column('col6', 'xe')
@@ -40,8 +41,10 @@ def stf_rms_lis_reader(file_loc):
         stf_table.rename_column('col10', 'N_frames')
         stf_table.rename_column('col11', 'flux')
     
+    # Add an additional column for error in mag
+    stf_table['me'] = 1.0 / stf_table['snr']
+    
     return stf_table
-
 
 
 def align_orig_pos_reader(file_loc,
