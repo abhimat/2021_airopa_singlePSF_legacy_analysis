@@ -55,12 +55,12 @@ def run_calibrate(starlist,
 # Read in epochs table
 epochs_table = Table.read('epochs_table.h5', format='hdf5', path='data')
 
-epochs_table = epochs_table[np.where(epochs_table['nights_combo'] == 'single_night')]
+# epochs_table = epochs_table[np.where(epochs_table['nights_combo'] == 'single_night')]
 
-specific_epoch = '20140805nirc2'
+specific_epoch = '20220525nirc2'
 specific_epoch = None
 
-if specific_epoch is not None:
+if specific_epoch != None:
     epochs_table = epochs_table[np.where(epochs_table['epoch'] == specific_epoch)]
 
 
@@ -71,17 +71,32 @@ for epochs_row in tqdm(epochs_table):
     cur_epoch = epochs_row['epoch']
     cur_filt = epochs_row['filt']
     
-    cur_epoch_align_dir = '{0}_{1}/starlists_align_rms/'.format(cur_epoch, cur_filt)
+    cur_epoch_align_dir = './{0}_{1}/starlists_align_rms/'.format(cur_epoch, cur_filt)
     
     os.makedirs(cur_epoch_align_dir, exist_ok=True)
     
-    # Copy source_list directory
-    shutil.copytree('{0}/source_list'.format(align_copy_path),
-                    '{0}/source_list'.format(cur_epoch_align_dir),
-                    dirs_exist_ok=True)
+    # Remove existing, and copy source_list directory
+    if os.path.exists('{0}/source_list'.format(cur_epoch_align_dir)):
+        shutil.rmtree(
+            '{0}/source_list'.format(cur_epoch_align_dir),
+            ignore_errors=True,
+        )
+    
+    shutil.copytree(
+        '{0}/source_list'.format(align_copy_path),
+        '{0}/source_list'.format(cur_epoch_align_dir),
+        dirs_exist_ok=True,
+    )
     
     # Make lis directory and copy starlists
     lis_dir_loc = '{0}/lis/'.format(cur_epoch_align_dir)
+    
+    if os.path.exists(lis_dir_loc): # Remove any existing lis directories
+        shutil.rmtree(
+            lis_dir_loc,
+            ignore_errors=True,
+        )
+    
     os.makedirs(lis_dir_loc, exist_ok=True)
     
     orig_leg_stf_file = '{0}/starlists/combo/{1}/starfinder_{2}/mag{1}_{3}_rms.lis'.format(
@@ -94,8 +109,8 @@ for epochs_row in tqdm(epochs_table):
     new_sin_stf_file = 'mag{0}_{1}_rms_{2}.lis'.format(
                             cur_epoch, cur_filt, single_version_str)
     
-    shutil.copy(orig_leg_stf_file, lis_dir_loc + new_leg_stf_file)
-    shutil.copy(orig_sin_stf_file, lis_dir_loc + new_sin_stf_file)
+    shutil.copy2(orig_leg_stf_file, lis_dir_loc + new_leg_stf_file)
+    shutil.copy2(orig_sin_stf_file, lis_dir_loc + new_sin_stf_file)
     
     # Run calibrate
     os.chdir(lis_dir_loc)

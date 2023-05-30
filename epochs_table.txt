@@ -1,138 +1,168 @@
-             epoch filt nights_combo
------------------- ---- ------------
-     20060503nirc2   kp single_night
-     20060521nirc2   kp single_night
-20060620_0621nirc2   kp  multi_night
-     20060620nirc2   kp single_night
-     20060621nirc2   kp single_night
-     20060717nirc2   kp single_night
-     20070517nirc2   kp single_night
-20070810_0812nirc2   kp  multi_night
-     20070810nirc2   kp single_night
-     20070812nirc2   kp single_night
-     20080515nirc2   kp single_night
-     20080724nirc2   kp single_night
-20090501_0504nirc2   kp  multi_night
-     20090501nirc2   kp single_night
-     20090502nirc2   kp single_night
-     20090504nirc2   kp single_night
-20090722_0724nirc2   kp  multi_night
-     20090722nirc2   kp single_night
-     20090722nirc2    h single_night
-     20090724nirc2   kp single_night
-     20090909nirc2   kp single_night
-20100504_0505nirc2   kp  multi_night
-     20100504nirc2   kp single_night
-     20100505nirc2   kp single_night
-     20100706nirc2   kp single_night
-     20100815nirc2   kp single_night
-     20110527nirc2   kp single_night
-     20110718nirc2   kp single_night
-20110823_0824nirc2   kp  multi_night
-     20110823nirc2   kp single_night
-     20110824nirc2   kp single_night
-20120515_0518nirc2   kp  multi_night
-     20120515nirc2   kp single_night
-     20120518nirc2   kp single_night
-     20120724nirc2   kp single_night
-20130426_0427nirc2   kp  multi_night
-     20130426nirc2   kp single_night
-     20130427nirc2   kp single_night
-     20130720nirc2   kp single_night
-20140319_0320nirc2   kp  multi_night
-     20140319nirc2   kp single_night
-     20140320nirc2   kp single_night
-20140418_0419nirc2   kp  multi_night
-     20140418nirc2   kp single_night
-     20140419nirc2   kp single_night
-     20140512nirc2   kp single_night
-     20140519nirc2   kp single_night
-20140703_0704nirc2   kp  multi_night
-     20140703nirc2   kp single_night
-     20140704nirc2   kp single_night
-20140803_0806nirc2   kp  multi_night
-     20140803nirc2   kp single_night
-     20140804nirc2   kp single_night
-     20140806nirc2   kp single_night
-20150331_0402nirc2   kp  multi_night
-     20150331nirc2   kp single_night
-     20150401nirc2   kp single_night
-     20150402nirc2   kp single_night
-     20150514nirc2   kp single_night
-20150809_0811nirc2   kp  multi_night
-     20150809nirc2   kp single_night
-     20150810nirc2   kp single_night
-     20150811nirc2   kp single_night
-     20160503nirc2   kp single_night
-     20160712nirc2   kp single_night
-     20160713nirc2   kp single_night
-20170504_0505nirc2   kp  multi_night
-     20170504nirc2   kp single_night
-     20170505nirc2   kp single_night
-     20170507nirc2    h single_night
-     20170718nirc2   kp single_night
-     20170727nirc2   kp single_night
-20170808_0811nirc2   kp  multi_night
-     20170808nirc2   kp single_night
-     20170809nirc2   kp single_night
-     20170810nirc2   kp single_night
-     20170811nirc2   kp single_night
-20170823_0826nirc2   kp  multi_night
-20170823_0826nirc2    h  multi_night
-     20170823nirc2    h single_night
-     20170823nirc2   kp single_night
-     20170824nirc2    h single_night
-     20170824nirc2   kp single_night
-     20170826nirc2    h single_night
-     20170826nirc2   kp single_night
-20180317_0330nirc2   kp  multi_night
-20180317_0330nirc2    h  multi_night
-20180317_0524nirc2   kp  multi_night
-20180317_0524nirc2    h  multi_night
-     20180317nirc2    h single_night
-     20180317nirc2   kp single_night
-     20180322nirc2   kp single_night
-     20180322nirc2    h single_night
-     20180330nirc2    h single_night
-     20180330nirc2   kp single_night
-20180519_0524nirc2   kp  multi_night
-20180519_0524nirc2    h  multi_night
-     20180519nirc2    h single_night
-     20180519nirc2   kp single_night
-     20180524nirc2   kp single_night
-     20180524nirc2    h single_night
-     20180903nirc2    h single_night
-20190419_0420nirc2   kp  multi_night
-     20190419nirc2   kp single_night
-     20190420nirc2   kp single_night
-     20190513nirc2    h single_night
-     20190513nirc2   kp single_night
-     20190523nirc2   kp single_night
-     20190625nirc2   kp single_night
-     20190630nirc2   kp single_night
-     20190814nirc2   kp single_night
-20190818_0819nirc2   kp  multi_night
-     20190818nirc2   kp single_night
-     20190819nirc2   kp single_night
-     20200707nirc2   kp single_night
-     20200809nirc2   kp single_night
-     20210429nirc2   kp single_night
-20210513_0514nirc2   kp  multi_night
-     20210513nirc2   kp single_night
-     20210514nirc2   kp single_night
-20210713_0714nirc2   kp  multi_night
-     20210713nirc2   kp single_night
-     20210714nirc2    h single_night
-     20210714nirc2   kp single_night
-20210812_0813nirc2   kp  multi_night
-20210812_0814nirc2   kp  multi_night
-     20210812nirc2   kp single_night
-     20210813nirc2   kp single_night
-     20210814nirc2   kp single_night
-     20210815nirc2   kp single_night
-     20210821nirc2   kp single_night
-20220514_0515nirc2   kp  multi_night
-     20220514nirc2   kp single_night
-     20220515nirc2   kp single_night
-     20220521nirc2    h single_night
-     20220521nirc2   kp single_night
+             epoch filt nights_combo num_frames          med_fwhms         med_strehls
+------------------ ---- ------------ ---------- ------------------ -------------------
+     20050730nirc2    h single_night          9              81.81                0.08
+     20050730nirc2    h single_night          9              81.81                0.08
+     20050730nirc2    h single_night          9              81.81                0.08
+     20050730nirc2   kp single_night         20  93.83500000000001                0.14
+     20050730nirc2   kp single_night         20  93.83500000000001                0.14
+     20050730nirc2   kp single_night         20  93.83500000000001                0.14
+     20060503nirc2   kp single_night        107              57.22                0.38
+     20060521nirc2   kp single_night          8               65.9               0.275
+20060620_0621nirc2   kp  multi_night        156              56.95                0.38
+     20060620nirc2   kp single_night         52  59.80500000000001                0.34
+     20060621nirc2   kp single_night        119              56.09                 0.4
+     20060717nirc2   kp single_night         64 57.394999999999996               0.395
+     20070517nirc2   kp single_night         76             57.625                0.39
+20070810_0812nirc2   kp  multi_night         80              57.08                0.34
+     20070810nirc2   kp single_night         36             63.045               0.255
+     20070812nirc2   kp single_night         54             55.335                0.36
+     20080515nirc2   kp single_night        135              52.94                0.31
+     20080724nirc2   kp single_night        104             58.295               0.355
+20090501_0504nirc2   kp  multi_night        151               57.5                 0.4
+     20090501nirc2   kp single_night        133              63.22                0.34
+     20090502nirc2   kp single_night         49               57.7                0.39
+     20090504nirc2   kp single_night         56              53.09               0.455
+20090722_0724nirc2   kp  multi_night         82             61.295                0.29
+     20090722nirc2   kp single_night         29              73.41                0.23
+     20090722nirc2    h single_night          4             65.195                0.12
+     20090724nirc2   kp single_night         79              60.94                0.29
+     20090909nirc2   kp single_night         44              58.14                0.38
+20100504_0505nirc2   kp  multi_night        158              60.91                0.34
+     20100504nirc2   kp single_night        106              62.45                0.33
+     20100505nirc2   kp single_night         60               59.7               0.355
+     20100706nirc2   kp single_night        110 60.620000000000005                0.34
+     20100815nirc2   kp single_night        127              58.36                0.32
+     20110527nirc2   kp single_night        117              63.89                0.31
+     20110718nirc2   kp single_night        164              57.87                 0.3
+20110823_0824nirc2   kp  multi_night        197              60.12                0.36
+     20110823nirc2   kp single_night        102             59.225                0.38
+     20110824nirc2   kp single_night        102             61.465                0.33
+20120515_0518nirc2   kp  multi_night        202              59.61                0.33
+     20120515nirc2   kp single_night        180             59.075                0.33
+     20120518nirc2   kp single_night         68  67.50999999999999                0.28
+     20120724nirc2   kp single_night        164             58.025                0.37
+20130426_0427nirc2   kp  multi_night        135              66.24                0.28
+     20130426nirc2   kp single_night         75              64.81                0.27
+     20130427nirc2   kp single_night         77              69.87                0.27
+     20130720nirc2   kp single_night        195              58.36                0.38
+20140319_0320nirc2   kp  multi_night         19              67.48                0.28
+     20140319nirc2   kp single_night         17             104.06                0.13
+     20140320nirc2   kp single_night         19              67.48                0.28
+20140418_0419nirc2   kp  multi_night          4             78.135               0.215
+     20140418nirc2   kp single_night          4             78.135               0.215
+     20140419nirc2   kp single_night          6            112.645                0.12
+     20140512nirc2   kp single_night          9              68.32                0.26
+     20140519nirc2   kp single_night        148 63.894999999999996                0.32
+20140703_0704nirc2   kp  multi_night        125              70.81                0.27
+     20140703nirc2   kp single_night         46             71.795                0.27
+     20140704nirc2   kp single_night         86              70.86                0.27
+20140803_0806nirc2   kp  multi_night        140 56.769999999999996                0.38
+     20140803nirc2   kp single_night         12              92.53                0.17
+     20140804nirc2   kp single_night         24             64.245                0.29
+     20140806nirc2   kp single_night        126             56.435                0.39
+20150331_0402nirc2   kp  multi_night         39              65.62                 0.3
+     20150331nirc2   kp single_night         25              68.22                0.28
+     20150401nirc2   kp single_night          5              69.19                0.25
+     20150402nirc2   kp single_night         17              62.95                0.32
+     20150514nirc2   kp single_night         32  81.30000000000001               0.185
+20150809_0811nirc2   kp  multi_night        203              57.16                 0.4
+     20150809nirc2   kp single_night         43              61.91                0.35
+     20150810nirc2   kp single_night         98              56.59                0.41
+     20150811nirc2   kp single_night         71              56.43                0.42
+     20160503nirc2   kp single_night        166             60.805                0.36
+     20160712nirc2   kp single_night         16  76.61500000000001                0.22
+     20160713nirc2   kp single_night        148 59.495000000000005                0.33
+20170504_0505nirc2   kp  multi_night        184              58.46                0.37
+     20170504nirc2   kp single_night        115              70.72                0.28
+     20170505nirc2   kp single_night        175              58.38                0.38
+     20170507nirc2    h single_night        107              50.79                0.23
+     20170718nirc2   kp single_night          9              64.46                0.28
+     20170727nirc2   kp single_night         45              78.21                 0.2
+20170808_0811nirc2   kp  multi_night        111              53.67                 0.4
+     20170808nirc2   kp single_night          9              93.33                0.15
+     20170809nirc2   kp single_night         23              61.84                0.33
+     20170810nirc2   kp single_night         30 58.879999999999995                0.34
+     20170811nirc2   kp single_night         87              52.64                0.43
+     20170813nirc2    h single_night         47              53.43                0.21
+20170823_0826nirc2    h  multi_night         49              58.14                0.18
+20170823_0826nirc2   kp  multi_night        112             60.935               0.355
+     20170823nirc2    h single_night          3              72.89                0.11
+     20170823nirc2   kp single_night         61              64.15                0.32
+     20170824nirc2    h single_night         28              59.15                0.18
+     20170824nirc2   kp single_night         42              60.68                0.37
+     20170826nirc2    h single_night         22 56.754999999999995                0.18
+     20170826nirc2   kp single_night         33              58.93                0.35
+20180317_0330nirc2   kp  multi_night         61              58.17                0.43
+20180317_0330nirc2    h  multi_night         42              54.64               0.255
+20180317_0524nirc2    h  multi_night         42              54.64               0.255
+20180317_0524nirc2   kp  multi_night         61              58.17                0.43
+     20180317nirc2   kp single_night         33              55.83                0.48
+     20180317nirc2    h single_night         28 53.519999999999996               0.275
+     20180322nirc2    h single_night         39              73.45                0.13
+     20180322nirc2   kp single_night         47              74.45                0.26
+     20180330nirc2   kp single_night         26              61.03                0.37
+     20180330nirc2    h single_night         21               58.7                0.19
+20180519_0524nirc2    h  multi_night         36  77.01499999999999                0.12
+20180519_0524nirc2   kp  multi_night         53              78.09                0.24
+     20180519nirc2    h single_night          7              83.43                0.11
+     20180519nirc2   kp single_night         11              78.42                0.25
+     20180524nirc2    h single_night         32              76.45                0.12
+     20180524nirc2   kp single_night         43              77.99                0.23
+     20180903nirc2    h single_night         64             68.005                0.14
+20190419_0420nirc2   kp  multi_night        114              63.29                0.36
+     20190419nirc2   kp single_night         66  77.03999999999999                0.22
+     20190420nirc2   kp single_night        112 63.245000000000005                0.36
+     20190513nirc2    h single_night         54              56.46                0.22
+     20190513nirc2   kp single_night         68 60.105000000000004               0.375
+     20190523nirc2   kp single_night        139              60.36                0.37
+     20190625nirc2   kp single_night         12              75.44                0.24
+     20190630nirc2   kp single_night         10              56.04               0.415
+     20190814nirc2   kp single_night         34  67.39500000000001               0.295
+20190818_0819nirc2   kp  multi_night         33              65.94                0.32
+     20190818nirc2   kp single_night         13              62.57                0.33
+     20190819nirc2   kp single_night         23               70.3                 0.3
+     20200707nirc2   kp single_night        169              70.29                0.28
+     20200809nirc2   kp single_night         32              69.56                0.26
+20210513_0514nirc2   kp  multi_night        128             63.195                0.32
+     20210513nirc2   kp single_night         67              75.52                0.23
+     20210514nirc2   kp single_night        122             63.025                0.32
+20210713_0714nirc2   kp  multi_night         13              71.89                0.26
+     20210713nirc2   kp single_night         10              67.73 0.30000000000000004
+     20210714nirc2    h single_night         34  83.91499999999999                 0.1
+     20210714nirc2   kp single_night         31              82.95                0.22
+20210812_0813nirc2   kp  multi_night        120             58.585                 0.4
+20210812_0814nirc2   kp  multi_night        123              58.72                 0.4
+     20210812nirc2   kp single_night         12             53.275                0.46
+     20210813nirc2   kp single_night        115              59.67                0.39
+     20210814nirc2   kp single_night         15              71.49                0.28
+     20210815nirc2   kp single_night         36             50.185                0.47
+     20210821nirc2   kp single_night         45              51.85                0.43
+20220514_0515nirc2   kp  multi_night        121              57.83                 0.4
+     20220514nirc2   kp single_night        118              57.78                 0.4
+     20220515nirc2   kp single_night         20              69.13                0.27
+     20220521nirc2   kp single_night         48               55.1                0.44
+     20220521nirc2    h single_night         41              52.85                0.26
+     20220525nirc2   kp single_night         57              59.63                0.39
+     20220525nirc2    h single_night         43              55.75                0.22
+     20220716nirc2   kp single_night         22              77.18                0.23
+     20220716nirc2   kp single_night         22              77.18                0.23
+20220719_0722nirc2   kp  multi_night        317              59.99                0.38
+     20220719nirc2   kp single_night        123              62.82                0.34
+     20220722nirc2   kp single_night        214              58.65                0.39
+20220814_0816nirc2   kp  multi_night        148              54.66                0.47
+     20220814nirc2   kp single_night         49              65.28                0.31
+     20220815nirc2   kp single_night        123              53.96                0.48
+     20220816nirc2    h single_night         13              57.91                0.21
+     20220816nirc2    h single_night         13              57.91                0.21
+     20220816nirc2    h single_night         13              57.91                0.21
+     20220816nirc2   kp single_night         28             65.195                0.33
+20220819_0820nirc2   kp  multi_night         75              58.39                 0.4
+20220819_0820nirc2    h  multi_night         52 54.385000000000005                0.23
+     20220819nirc2   kp single_night         51              56.61                0.43
+     20220819nirc2    h single_night         42 53.894999999999996                0.24
+     20220819nirc2    h single_night         42 53.894999999999996                0.24
+     20220820nirc2    h single_night         29               61.8                0.19
+     20220820nirc2   kp single_night         32             64.225                0.34
+20230512_0513nirc2   kp  multi_night        194              65.36                0.33
+     20230512nirc2   kp single_night         81              75.65                0.24
+     20230513nirc2   kp single_night        174              65.09                0.33

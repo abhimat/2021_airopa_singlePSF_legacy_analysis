@@ -10,7 +10,7 @@ import astropy.table as table
 
 import numpy as np
 
-exclude_epochs = ['20050730nirc2', '20050731nirc2', '20060502nirc2',
+exclude_epochs = ['20050731nirc2', '20060502nirc2',
                   '20140805nirc2']
 
 def construct_epoch_table(dr_path = '/g/ghez/data/dr/dr1',
@@ -65,7 +65,7 @@ def construct_epoch_table(dr_path = '/g/ghez/data/dr/dr1',
     # Go through epochs to figure out which are multi night combos
     combo_epochs_column = []
     filt_column = []
-
+    
     for epoch in common_epochs:
         filt_column.append(filt)
         if epoch.find('_') == -1:
@@ -73,10 +73,27 @@ def construct_epoch_table(dr_path = '/g/ghez/data/dr/dr1',
         else:
             combo_epochs_column.append('multi_night')
     
+    # Determine epoch quality statistics from combo log file
+    num_frames = []
+    med_fwhms = []
+    med_strehls = []
+    
+    for epoch in common_epochs:
+        log_file = f'{dr_path}/combo/{epoch}/mag{epoch}_{filt}.log'
+        log_table = Table.read(log_file, format='ascii')
+        
+        num_frames.append(len(log_table))
+        med_fwhms.append(np.median(log_table['col2']))
+        med_strehls.append(np.median(log_table['col3']))
+        
+    
     # Construct final Astropy table
     epochs_table = Table({'epoch': common_epochs,
                           'filt': filt_column,
-                          'nights_combo': combo_epochs_column})
+                          'nights_combo': combo_epochs_column,
+                          'num_frames': num_frames,
+                          'med_fwhms': med_fwhms,
+                          'med_strehls': med_strehls})
     return epochs_table
 
 

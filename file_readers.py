@@ -115,3 +115,25 @@ def align_mag_reader(file_loc,
     align_mag_table.rename_column('col6', align_stf_2_version + '_mag')
     
     return align_mag_table
+
+def align_param_reader(file_loc,
+                       align_stf_1_version='v2_3',
+                       align_stf_2_version='v3_1'):
+    # Read in table
+    align_param_table = Table.read(file_loc, format='ascii',
+                                   header_start=None, delimiter='\s')
+    
+    # print(align_param_table)
+    
+    # Rename columns
+    align_param_table.rename_column('col1', 'name')
+    align_param_table.rename_column('col2', align_stf_1_version + '_snr')
+    align_param_table.rename_column('col3', align_stf_1_version + '_corr')
+    align_param_table.rename_column('col4', align_stf_1_version + '_nframes')
+    align_param_table.rename_column('col5', align_stf_1_version + '_flux')
+    align_param_table.rename_column('col6', align_stf_2_version + '_snr')
+    align_param_table.rename_column('col7', align_stf_2_version + '_corr')
+    align_param_table.rename_column('col8', align_stf_2_version + '_nframes')
+    align_param_table.rename_column('col9', align_stf_2_version + '_flux')
+    
+    return align_param_table
