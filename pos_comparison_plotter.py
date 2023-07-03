@@ -366,7 +366,7 @@ epochs_table = Table.read('epochs_table.h5', format='hdf5', path='data')
 epochs_table = epochs_table[np.where(epochs_table['nights_combo'] == 'single_night')]
 
 # Run analysis code on all epochs
-for epochs_row in tqdm(epochs_table[30:]):
+for epochs_row in tqdm(epochs_table[:30]):
     cur_epoch = epochs_row['epoch']
     print(cur_epoch)
     cur_filt = epochs_row['filt']
