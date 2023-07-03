@@ -23,3 +23,7 @@
 # Ignore hdf5 data tables
 **/*.h5
 **/*.hdf5
+
+# Ignore epoch subdirectories
+**/*nirc2_kp/*
+**/*nirc2_h/*
