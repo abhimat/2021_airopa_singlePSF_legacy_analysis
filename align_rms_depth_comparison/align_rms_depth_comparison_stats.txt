@@ -1,0 +1,12 @@
+Median number more stars detected
+in single PSF vs. legacy, above strehl 0.2:
+76.0 stars
+(7.02 % more than legacy)
+---
+
+Median number more stars detected
+in single PSF vs. legacy, below strehl 0.2:
+8.0 stars
+(1.61 % more than legacy)
+===
+
